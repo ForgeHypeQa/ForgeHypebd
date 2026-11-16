@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGora Solutions | Digital Aura for Your Business</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        aura: {
+                            blue: '#2563EB',
+                            cyan: '#3B82F6',
+                            violet: '#8B5CF6',
+                            emerald: '#10B981',
+                            amber: '#F59E0B',
+                            dark: '#0B0F19',
+                            cardDark: '#111827',
+                            borderDark: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        space: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for horizontal swipe cards */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom Asymmetric Squircle Corner for KOTA aesthetic */
+        .kota-squircle-br {
+            border-bottom-right-radius: 80px;
+        }
+        .kota-squircle-tr {
+            border-top-right-radius: 80px;
+        }
+        .kota-squircle-tl {
+            border-top-left-radius: 80px;
+        }
+        .kota-squircle-bl {
+            border-bottom-left-radius: 80px;
+        }
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- 1. Navigation -->
+    <!-- [Call: Nav-Standard] ➔ Standard Navbar: LogoText-ThemeToggle-1CTA -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-display font-extrabold text-xl shadow-lg shadow-blue-500/20">
+                            D
+                        </div>
+                        <span class="font-display font-extrabold text-2xl tracking-tight text-slate-900">DGora<span class="text-blue-600">.</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Who We Are</a>
+                    <a href="#pain-points" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Challenges</a>
+                    <a href="#services" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Pricing</a>
+                    <a href="#journey" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">The Journey</a>
+                </nav>
+
+                <!-- Primary CTA -->
+                <div class="flex items-center space-x-4">
+                    <a href="#consultation" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md shadow-blue-600/20 hover:scale-[1.02] active:scale-[0.98]">
+                        Book a free consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- 2. Hero Section -->
+    <!-- [Call: Hero-Video] ➔ Hybrid Hero: Problem-Solution Hook -->
+    <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-bold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                    <span>Your Digital Aura Partner</span>
+                </div>
+
+                <!-- Main Problem Hook -->
+                <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-slate-900 tracking-tight leading-[1.1]">
+                    You lost the sale. <br class="hidden sm:inline"/>
+                    <span class="text-slate-400 font-normal">They weren't better.</span> <br/>
+                    <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">They showed up before you.</span>
+                </h1>
+
+                <!-- Solution Subtext -->
+                <p class="text-lg sm:text-2xl text-slate-600 font-normal max-w-2xl mx-auto leading-relaxed">
+                    You built something valuable. So why can't your customers see what you see?
+                </p>
+
+                <div class="pt-4 p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xl shadow-slate-200/50 max-w-2xl mx-auto">
+                    <p class="text-base sm:text-lg font-semibold text-slate-800">
+                        That's where <span class="text-blue-600 font-extrabold">DGora</span> comes in. <br/>
+                        <span class="text-slate-500 font-normal">DGora = your Digital Aura. Everything you need for your digital presence.</span>
+                    </p>
+                    <p class="mt-3 text-sm text-slate-600">
+                        We're operators, not IT consultants. We build it. We run it. We optimize it. We keep improving it – as you grow.
+                    </p>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#consultation" class="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02]">
+                        Book a Free Consultation
+                    </a>
+                    <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold text-base transition-all">
+                        Meet the team &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. Who We Are & Trust Section -->
+    <!-- [Call: Trust-MetricsDark] ➔ Dark Metrics & Qatar Market Heritage -->
+    <section id="about" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Content Left -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-blue-400 font-mono text-sm font-semibold tracking-wider uppercase">
+                        // Who We Are
+                    </div>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+                        Built on business experience. <br/>
+                        <span class="text-blue-400">Driven by digital thinking.</span>
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        DGora is a digital services partner based in Doha, working across Qatar and the GCC since 2022[span_0](start_span)[span_0](end_span). We don't build a website and disappear – we bring 20+ years of Qatar market experience, an engineering problem-solving mindset, and real hands-on time running startups, e-commerce, and business operations to every brand we work with[span_1](start_span)[span_1](end_span).
+                    </p>
+                    <p class="text-slate-400 font-medium">
+                        One strategy. From business to brand. From start to scale[span_2](start_span)[span_2](end_span).
+                    </p>
+                </div>
+
+                <!-- Metrics Right -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80">
+                        <div class="font-display font-extrabold text-4xl text-blue-400">20+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-2">Years Qatar Market Experience[span_3](start_span)[span_3](end_span)</div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80">
+                        <div class="font-display font-extrabold text-4xl text-emerald-400">2022</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-2">Operating Across GCC[span_4](start_span)[span_4](end_span)</div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80">
+                        <div class="font-display font-extrabold text-4xl text-purple-400">100%</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-2">Hands-On Operator Mindset[span_5](start_span)[span_5](end_span)</div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80">
+                        <div class="font-display font-extrabold text-4xl text-amber-400">1 Roof</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-2">All Missing Digital Pieces[span_6](start_span)[span_6](end_span)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. 6 Pain Points (Dark Theme Vertical Cards Stack) -->
+    <!-- [Call: Feature-VerticalCards] ➔ Dark Vertical Cards for 6 Pain Points -->
+    <section id="pain-points" class="py-24 bg-[#0B0F19] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-blue-500 font-mono text-sm font-bold uppercase tracking-widest">// The Problem</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mt-2">
+                    Does your business suffer from these digital bottlenecks?
+                </h2>
+            </div>
+
+            <!-- Vertical Card Stack -->
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <!-- Card 01 -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all group">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <span class="font-mono text-blue-500 text-xl font-bold">01</span>
+                        <div class="sm:flex-1 sm:ml-6">
+                            <h3 class="font-display text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Nobody Can Find You[span_7](start_span)[span_7](end_span)</h3>
+                            <p class="text-slate-400 mt-2 leading-relaxed">
+                                You're good. You're just invisible. Customers looking for you are finding someone else instead[span_8](start_span)[span_8](end_span).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all group">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <span class="font-mono text-blue-500 text-xl font-bold">02</span>
+                        <div class="sm:flex-1 sm:ml-6">
+                            <h3 class="font-display text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Your Website Isn't Working[span_9](start_span)[span_9](end_span)</h3>
+                            <p class="text-slate-400 mt-2 leading-relaxed">
+                                It exists. It just doesn't show up. No search, no maps, no social, no discovery, no visitors[span_10](start_span)[span_10](end_span).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all group">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <span class="font-mono text-blue-500 text-xl font-bold">03</span>
+                        <div class="sm:flex-1 sm:ml-6">
+                            <h3 class="font-display text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">They Don't Remember You[span_11](start_span)[span_11](end_span)</h3>
+                            <p class="text-slate-400 mt-2 leading-relaxed">
+                                A business card gives your contact. A brand gives them something to remember. No memory, no trust. No trust, no sale[span_12](start_span)[span_12](end_span).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 04 -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all group">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <span class="font-mono text-blue-500 text-xl font-bold">04</span>
+                        <div class="sm:flex-1 sm:ml-6">
+                            <h3 class="font-display text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Your Website Is Already Outdated[span_13](start_span)[span_13](end_span)</h3>
+                            <p class="text-slate-400 mt-2 leading-relaxed">
+                                Your business moved on. Your website didn't. Managing it costs money. Losing customers costs more[span_14](start_span)[span_14](end_span).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 05 -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all group">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <span class="font-mono text-blue-500 text-xl font-bold">05</span>
+                        <div class="sm:flex-1 sm:ml-6">
+                            <h3 class="font-display text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Your Phone Is Your Customer Service[span_15](start_span)[span_15](end_span)</h3>
+                            <p class="text-slate-400 mt-2 leading-relaxed">
+                                You're still answering the same questions, all day and all night. Your customers get answers, but your time disappears[span_16](start_span)[span_16](end_span).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 06 -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all group">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <span class="font-mono text-blue-500 text-xl font-bold">06</span>
+                        <div class="sm:flex-1 sm:ml-6">
+                            <h3 class="font-display text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Everything Still Depends on You[span_17](start_span)[span_17](end_span)</h3>
+                            <p class="text-slate-400 mt-2 leading-relaxed">
+                                A year in, you're still doing it all alone and growth has stalled. You're running the business manually when much of it could be automated. Your specialty is your business not IT, customer support or promotion[span_18](start_span)[span_18](end_span).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 5. 6 Core Services (Dark Theme Horizontal Scrollable Swipeable Cards) -->
+    <!-- [Call: Feature-BentoGrid] ➔ KOTA Style Asymmetric Swipeable Cards in Dark Theme -->
+    <section id="services" class="py-24 bg-slate-950 text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <span class="text-blue-400 font-mono text-sm font-bold uppercase tracking-widest">// Key Services</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mt-2">
+                    Everything under one roof[span_19](start_span)[span_19](end_span).
+                </h2>
+            </div>
+            <p class="text-slate-400 text-sm font-mono flex items-center space-x-2">
+                <span>Swipe horizontal to explore</span> &rarr;
+            </p>
+        </div>
+
+        <!-- Horizontal Scrollable Container -->
+        <div class="flex overflow-x-auto gap-6 px-4 sm:px-8 pb-8 snap-x snap-mandatory hide-scrollbar">
+            
+            <!-- Service Card 01 -->
+            <div class="min-w-[300px] sm:min-w-[380px] p-8 bg-slate-900 border border-slate-800 snap-center rounded-3xl kota-squircle-tr flex flex-col justify-between hover:border-blue-500/60 transition-all">
+                <div>
+                    <span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">01 // Channels</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-4">Digital Identity Channels[span_20](start_span)[span_20](end_span)</h3>
+                    <p class="text-slate-300 text-sm font-semibold mt-1">Where your customers find you[span_21](start_span)[span_21](end_span).</p>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        Website, e-commerce, and social presence – LinkedIn, Instagram, Meta, Google Business all built and connected, not scattered across five different logins[span_22](start_span)[span_22](end_span).
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-blue-400 font-semibold">
+                    Identity & Social Setup &rarr;
+                </div>
+            </div>
+
+            <!-- Service Card 02 -->
+            <div class="min-w-[300px] sm:min-w-[380px] p-8 bg-slate-900 border border-slate-800 snap-center rounded-3xl kota-squircle-br flex flex-col justify-between hover:border-blue-500/60 transition-all">
+                <div>
+                    <span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">02 // Visibility</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-4">Digital Growth[span_23](start_span)[span_23](end_span)</h3>
+                    <p class="text-slate-300 text-sm font-semibold mt-1">Found before your competitor is[span_24](start_span)[span_24](end_span).</p>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        SEO, GEO, maps, business listings, and AI search so you show up wherever your next customer is actually looking[span_25](start_span)[span_25](end_span).
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-blue-400 font-semibold">
+                    SEO, GEO & Maps &rarr;
+                </div>
+            </div>
+
+            <!-- Service Card 03 -->
+            <div class="min-w-[300px] sm:min-w-[380px] p-8 bg-slate-900 border border-slate-800 snap-center rounded-3xl kota-squircle-bl flex flex-col justify-between hover:border-blue-500/60 transition-all">
+                <div>
+                    <span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">03 // Brand</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-4">Brand Media Kit[span_26](start_span)[span_26](end_span)</h3>
+                    <p class="text-slate-300 text-sm font-semibold mt-1">Remembered, not just recognized[span_27](start_span)[span_27](end_span).</p>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        Your logo, colors, typography, story, and packaging – the details that turn "I've seen them somewhere" into "I trust them.[span_28](start_span)"[span_28](end_span)
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-blue-400 font-semibold">
+                    Logo & Packaging &rarr;
+                </div>
+            </div>
+
+            <!-- Service Card 04 -->
+            <div class="min-w-[300px] sm:min-w-[380px] p-8 bg-slate-900 border border-slate-800 snap-center rounded-3xl kota-squircle-tl flex flex-col justify-between hover:border-blue-500/60 transition-all">
+                <div>
+                    <span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">04 // Maintenance</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-4">Always Current[span_29](start_span)[span_29](end_span)</h3>
+                    <p class="text-slate-300 text-sm font-semibold mt-1">Never feel outdated[span_30](start_span)[span_30](end_span).</p>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        A site that stays current builds credibility on its own – customers visit more, call less, and forward the link to a friend without being asked[span_31](start_span)[span_31](end_span).
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-blue-400 font-semibold">
+                    Continuous Operations &rarr;
+                </div>
+            </div>
+
+            <!-- Service Card 05 -->
+            <div class="min-w-[300px] sm:min-w-[380px] p-8 bg-slate-900 border border-slate-800 snap-center rounded-3xl kota-squircle-tr flex flex-col justify-between hover:border-blue-500/60 transition-all">
+                <div>
+                    <span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">05 // AI Support</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-4">AI Customer Support[span_32](start_span)[span_32](end_span)</h3>
+                    <p class="text-slate-300 text-sm font-semibold mt-1">Instant answers. Real time back[span_33](start_span)[span_33](end_span).</p>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        AI chatbots handle product info, location, and hours around the clock – you step in only for what actually needs you[span_34](start_span)[span_34](end_span).
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-blue-400 font-semibold">
+                    24/7 Smart Agents &rarr;
+                </div>
+            </div>
+
+            <!-- Service Card 06 -->
+            <div class="min-w-[300px] sm:min-w-[380px] p-8 bg-slate-900 border border-slate-800 snap-center rounded-3xl kota-squircle-br flex flex-col justify-between hover:border-blue-500/60 transition-all">
+                <div>
+                    <span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">06 // Apps & Systems</span>
+                    <h3 class="font-display text-2xl font-bold text-white mt-4">Business Automation & Custom Apps[span_35](start_span)[span_35](end_span)</h3>
+                    <p class="text-slate-300 text-sm font-semibold mt-1">Built around how you actually work[span_36](start_span)[span_36](end_span).</p>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        HR, attendance, payroll, invoicing, reporting, inventory, bookings, petty cash, facilities – solved with our 4-step process instead of an expensive ERP[span_37](start_span)[span_37](end_span).
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-blue-400 font-semibold">
+                    Custom Workflows &rarr;
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 6. Pricing Tiers (4 Colorful Cards) -->
+    <!-- [Call: Feature-Pricing] ➔ 4 Distinct Colorful Cards -->
+    <section id="pricing" class="py-24 bg-slate-100 text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-mono text-sm font-bold uppercase tracking-widest">// Clear Investments</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 mt-2">
+                    Pricing designed for every growth stage[span_38](start_span)[span_38](end_span).
+                </h2>
+                <p class="text-slate-600 mt-4 text-sm sm:text-base">
+                    Fine print (all tiers): Domain, any third-party subscriptions, premium AI subscriptions, ecommerce/ads are not included in the monthly fee[span_39](start_span)[span_39](end_span).
+                </p>
+            </div>
+
+            <!-- 4 Colorful Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1: Cyan Theme (Aura Lite) -->
+                <div class="bg-[#E0F2FE] border border-sky-300 rounded-3xl p-8 flex flex-col justify-between shadow-lg shadow-sky-100 relative">
+                    <div>
+                        <span class="px-3 py-1 bg-sky-200 text-sky-800 rounded-full text-xs font-bold uppercase">Starter</span>
+                        <h3 class="font-display font-extrabold text-2xl text-slate-900 mt-4">Aura Lite[span_40](start_span)[span_40](end_span)</h3>
+                        <div class="mt-4">
+                            <span class="font-display font-extrabold text-3xl text-slate-900">QR 200</span>
+                            <span class="text-xs font-semibold text-slate-600">/month (3-month term only)[span_41](start_span)[span_41](end_span)</span>
+                        </div>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-700 font-medium">
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>Static website[span_42](start_span)[span_42](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>Brand media kit[span_43](start_span)[span_43](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>Social media channel setup[span_44](start_span)[span_44](end_span)</span></li>
+                        </ul>
+                    </div>
+                    <a href="#consultation" class="mt-8 w-full py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-full text-center font-bold text-sm shadow-md transition-all">
+                        Start with Lite &rarr;[span_45](start_span)[span_45](end_span)
+                    </a>
+                </div>
+
+                <!-- Card 2: Violet Theme (Aura+) -->
+                <div class="bg-[#F3E8FF] border border-purple-300 rounded-3xl p-8 flex flex-col justify-between shadow-lg shadow-purple-100 relative">
+                    <div>
+                        <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-xs font-bold uppercase">Growth</span>
+                        <h3 class="font-display font-extrabold text-2xl text-slate-900 mt-4">Aura+[span_46](start_span)[span_46](end_span)</h3>
+                        <div class="mt-4">
+                            <span class="font-display font-extrabold text-3xl text-slate-900">QR 300</span>
+                            <span class="text-xs font-semibold text-slate-600">/month (6-month term only)[span_47](start_span)[span_47](end_span)</span>
+                        </div>
+                        <p class="text-xs font-bold text-purple-900 mt-4">Everything in Lite, plus:[span_48](start_span)[span_48](end_span)</p>
+                        <ul class="mt-3 space-y-3 text-sm text-slate-700 font-medium">
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>Dynamic website[span_49](start_span)[span_49](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>Up to 6 promo videos (30s)[span_50](start_span)[span_50](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>4 weekly social posts[span_51](start_span)[span_51](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>SEO, GEO & map optimization[span_52](start_span)[span_52](end_span)</span></li>
+                        </ul>
+                    </div>
+                    <a href="#consultation" class="mt-8 w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full text-center font-bold text-sm shadow-md transition-all">
+                        Choose Aura+ &rarr;[span_53](start_span)[span_53](end_span)
+                    </a>
+                </div>
+
+                <!-- Card 3: Gradient Highlight Theme (Aura Pro) -->
+                <div class="bg-gradient-to-b from-blue-900 to-slate-900 border-2 border-blue-400 rounded-3xl p-8 flex flex-col justify-between shadow-xl text-white relative transform md:-translate-y-2">
+                    <div class="absolute -top-3 right-6 px-3 py-1 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-black rounded-full text-xs uppercase tracking-wider">
+                        Best Value[span_54](start_span)[span_54](end_span)
+                    </div>
+                    <div>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-bold uppercase">Scale</span>
+                        <h3 class="font-display font-extrabold text-2xl text-white mt-4">Aura Pro[span_55](start_span)[span_55](end_span)</h3>
+                        <div class="mt-4">
+                            <span class="font-display font-extrabold text-3xl text-white">QR 300</span>
+                            <span class="text-xs font-semibold text-slate-300">/month (10-mo pay, last 2 mo free)[span_56](start_span)[span_56](end_span)</span>
+                        </div>
+                        <p class="text-xs font-bold text-blue-300 mt-4">Everything in Aura+, plus:[span_57](start_span)[span_57](end_span)</p>
+                        <ul class="mt-3 space-y-3 text-sm text-slate-200 font-medium">
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>E-commerce / Accounts[span_58](start_span)[span_58](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>3 mo. managed content[span_59](start_span)[span_59](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>Meta & Google Ads setup[span_60](start_span)[span_60](end_span)</span></li>
+                            <li class="flex items-center space-x-2"><span>✓</span> <span>Lead gen & AI Chatbot[span_61](start_span)[span_61](end_span)</span></li>
+                        </ul>
+                    </div>
+                    <a href="#consultation" class="mt-8 w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white rounded-full text-center font-bold text-sm shadow-lg transition-all">
+                        Go Pro &rarr;[span_62](start_span)[span_62](end_span)
+                    </a>
+                </div>
+
+                <!-- Card 4: Emerald Theme (À La Carte Automation) -->
+                <div class="bg-[#ECFDF5] border border-emerald-300 rounded-3xl p-8 flex flex-col justify-between shadow-lg shadow-emerald-100 relative">
+                    <div>
+                        <span class="px-3 py-1 bg-emerald-200 text-emerald-800 rounded-full text-xs font-bold uppercase">Custom</span>
+                        <h3 class="font-display font-extrabold text-2xl text-slate-900 mt-4">À La Carte[span_63](start_span)[span_63](end_span)</h3>
+                        <div class="mt-4">
+                            <span class="font-display font-extrabold text-xl text-slate-900">Digital Automation[span_64](start_span)[span_64](end_span)</span>
+                            <p class="text-xs text-slate-600 mt-1">Price upon discussion[span_65](start_span)[span_65](end_span)</p>
+                        </div>
+                        <p class="mt-4 text-xs text-slate-700 leading-relaxed">
+                            AI agents, HR, inventory, bookings, reporting, petty cash, facilities[span_66](start_span)[span_66](end_span). We scope it around exactly what's eating your time[span_67](start_span)[span_67](end_span).
+                        </p>
+                    </div>
+                    <a href="#consultation" class="mt-8 w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-center font-bold text-sm shadow-md transition-all">
+                        Book a free consultation &rarr;[span_68](start_span)[span_68](end_span)
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 7. The Journey & Comparison -->
+    <!-- [Call: Feature-Comparison] ➔ Most agencies vs DGora 5-step loop -->
+    <section id="journey" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-400 font-mono text-sm font-bold uppercase tracking-widest">// The Journey</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mt-2">
+                    We Don't Just Build. We Stay[span_69](start_span)[span_69](end_span).
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Most Agencies -->
+                <div class="p-8 rounded-3xl bg-slate-800/50 border border-slate-700 text-center">
+                    <span class="text-xs font-mono uppercase text-slate-400 tracking-wider">Most Agencies[span_70](start_span)[span_70](end_span)</span>
+                    <div class="flex justify-center items-center space-x-4 mt-6 text-xl font-bold text-slate-400">
+                        <span>Build</span> &rarr;
+                        <span>Deliver</span> &rarr;
+                        <span class="text-rose-400">Leave[span_71](start_span)[span_71](end_span)</span>
+                    </div>
+                </div>
+
+                <!-- DGora Loop -->
+                <div class="p-8 rounded-3xl bg-gradient-to-br from-blue-950 to-slate-900 border border-blue-500/50 text-center shadow-xl">
+                    <span class="text-xs font-mono uppercase text-blue-400 tracking-wider">DGora Continuous Loop[span_72](start_span)[span_72](end_span)</span>
+                    <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mt-6 text-sm sm:text-base font-extrabold text-white">
+                        <span class="px-3 py-1 bg-blue-600/30 rounded-lg border border-blue-400/30">DISCOVER</span> &rarr;
+                        <span class="px-3 py-1 bg-blue-600/30 rounded-lg border border-blue-400/30">BUILD</span> &rarr;
+                        <span class="px-3 py-1 bg-blue-600/30 rounded-lg border border-blue-400/30">LAUNCH</span> &rarr;
+                        <span class="px-3 py-1 bg-blue-600/30 rounded-lg border border-blue-400/30">RUN</span> &rarr;
+                        <span class="px-3 py-1 bg-blue-600/30 rounded-lg border border-blue-400/30">MEASURE</span> &rarr;
+                        <span class="px-3 py-1 bg-emerald-500/30 rounded-lg border border-emerald-400/30 text-emerald-300">IMPROVE</span>[span_73](start_span)[span_73](end_span)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 8. Footer / Call to Action -->
+    <!-- [Call: Footer-Standard] ➔ Final Consultation Hook -->
+    <footer id="consultation" class="py-20 bg-slate-950 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-display font-extrabold text-4xl sm:text-6xl text-white tracking-tight">
+                Start your Digital Aura.[span_74](start_span)[span_74](end_span)
+            </h2>
+            <p class="text-blue-400 font-display font-bold text-2xl mt-2">
+                That brings you business[span_75](start_span)[span_75](end_span).
+            </p>
+            <div class="mt-8">
+                <a href="mailto:info@dgora.com" class="inline-flex items-center justify-center px-10 py-5 rounded-full text-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-600/30 transition-all hover:scale-105">
+                    Book a free consultation &rarr;[span_76](start_span)[span_76](end_span)
+                </a>
+            </div>
+            <div class="mt-16 pt-8 border-t border-slate-900 text-xs text-slate-500">
+                &copy; 2026 DGora Solutions. Operating across Qatar & the GCC[span_77](start_span)[span_77](end_span). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
